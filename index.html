@@ -553,6 +553,22 @@ const projects = [
     overview: "Graduate research project investigating composite phase-change materials for latent thermal energy storage in solar energy applications. The thesis developed a dynamic simulation framework and performed exergy accounting to identify dominant irreversibility sources across competing bed configurations.",
     roleLabel: "Research Focus",
     role: "T-H diagram framework for cascade sensible/latent systems. Carnot efficiency analysis. Dynamic simulation and comparative performance assessment of four packed-bed configurations."
+  },
+  {
+    id: 6,
+    category: "AI Sustainability",
+    title: "The True Carbon Cost of AI: A Lifecycle Assessment of Llama 3.1",
+    desc: "Full lifecycle carbon assessment of Meta's Llama 3.1 405B across embodied emissions, transportation, training, post-training, and inference — deployed on Danish AI infrastructure.",
+    image: "energy-in-ai/lca_lifecycle_stages.png",
+    meta: { "Institution": "DTU — Special Course", "Year": "2025", "Model": "Llama 3.1 405B (Meta AI)", "Tools": "Python, Ecoinvent LCA Database", "Domain": "Life Cycle Assessment", "Total Footprint": "22,564–49,904 tCO₂e" },
+    overview: "Conducted a full Life Cycle Assessment (LCA) of Meta's Llama 3.1 405B — one of the most powerful openly available large language models — simulating its deployment on Danish AI infrastructure to quantify carbon emissions across the model's entire lifecycle. Most published AI emissions analyses report only training energy consumption: a single, measurable compute event defined by GPU hours and power draw. This work extends that scope to address inference — the cumulative carbon burden of billions of user queries served over the model's operational life — which in the upper-bound scenario becomes the single largest contributor at 41% of total lifecycle emissions, exceeding the training footprint by more than 2×. A critical methodological element throughout is Power Usage Effectiveness (PUE), the ratio of total data center facility energy to IT equipment energy alone. A PUE of 1.0 represents theoretical perfection; real facilities range from 1.1 to 1.5+. Meta reports a PUE of 1.09 for its Grand Teton infrastructure, and multiplying raw hardware power by this factor accounts for the overhead of cooling systems, power distribution, and facility infrastructure — producing a more realistic total energy draw for both training and inference stages. The LCA follows a cradle-to-grave framework across five included stages: Embodied Emissions (hardware manufacturing for training and inference fleets), Transportation (air freight of 16,384 NVIDIA H100 GPUs), Training (dynamic and idle power), Post-Training (six iterative rounds of reward modeling, supervised fine-tuning, and DPO), and Inference (global server fleet deployment). Results under Danish grid conditions (carbon intensity 0.220 kg CO₂eq/kWh via Ecoinvent) indicate a total lifecycle footprint of 22,564–49,904 tCO₂e. Training alone accounts for only ≈8,240 tCO₂e. Embodied emissions and inference each individually surpass training, reaching up to 19,020 tCO₂e and 18,220 tCO₂e respectively at the upper bound. At its maximum, the lifecycle impact of this single model rivals the annual greenhouse gas emissions of over 6,900 Danish residents.",
+    roleLabel: "Contribution",
+    role: "LCA boundary definition and stage-by-stage methodology design. Dynamic and idle power consumption calculations for training using GPU TDP, GPU hours, and PUE, adapted from Patterson et al. and Luccioni et al. frameworks. Post-training compute demand estimation across six iterative rounds of RM, SFT, and DPO. Inference fleet sizing based on empirical throughput benchmarks across Oracle, NVIDIA TensorRT-LLM, and Cerebras hardware configurations. Embodied emissions estimation via HPE ProLiant server analog and third-party H100 GPU LCA literature. Transportation footprint modeled via DEFRA international air freight emission factors for 16,384 GPU units. All stages integrated with Ecoinvent Danish grid carbon intensity values.",
+    figures: [
+      { src: "energy-in-ai/lca_included_stages.png",               caption: "Included lifecycle stages in the Llama 3.1 LCA — Embodied Emissions, Transportation, Training, Post-Training, and Inference selected from the eight-stage cradle-to-grave framework" },
+      { src: "energy-in-ai/lca_carbon_footprint_distribution.png", caption: "Distribution of carbon footprint across lifecycle stages for lower and upper bound scenarios — tCO₂e contributions visualized by stage" },
+      { src: "energy-in-ai/lca_table5_footprint.png",              caption: "Table 5: Detailed lifecycle carbon footprint for Llama 3.1 (405B) — lower bound, average, and upper bound estimates with percentage contributions by stage" }
+    ]
   }
 ];
 
@@ -585,6 +601,7 @@ function getBg(cat) {
   if (cat.includes('Nuclear')) return '#dde8f4';
   if (cat.includes('Hydrogen')) return '#e1ede4';
   if (cat.includes('Data')) return '#e8e4f0';
+  if (cat.includes('AI')) return '#e8f0e4';
   return '#dde8f4';
 }
 
