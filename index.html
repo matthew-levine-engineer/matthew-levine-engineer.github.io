@@ -521,18 +521,17 @@ const projects = [
   {
     id: 3,
     category: "Thermal Energy Storage",
-    title: "Molten Salt PCM Storage — Dymola Model",
+    title: "Molten Salt Latent Energy Storage Thermal Model",
     desc: "Transient Dymola simulation of a solar salt PCM coupled to a steam loop. 2D radial-axial discretization captures phase change dynamics and steam production from latent heat discharge.",
-    meta: { "Institution": "DTU — Special Course", "Co-author": "Daniel Ruberg Nørhave", "PCM": "Solar Salt (60% NaNO₃ / 40% KNO₃)", "Tool": "Dymola / Modelica (TIL library)", "Melting Point": "223°C", "Storage Capacity": "~9,250 Wh" },
+    image: "dual_tube_fin_design.png",
+    meta: { "Institution": "DTU — Special Course", "PCM": "Solar Salt (60% NaNO₃ / 40% KNO₃)", "Tool": "Dymola / Modelica (TIL library)", "Melting Point": "223°C", "Storage Capacity": "~9.25 kWh" },
     overview: "Built a transient PCM thermal storage model in Dymola/Modelica to study the charge-discharge behavior of solar salt (60:40 wt% NaNO₃/KNO₃) coupled to a steam generation loop. The model uses a custom PCM component with 2D discretization — radial conduction modeled via the cylindrical shell equation and axial conduction via rectangular Fourier conduction — interconnected with a TIL-library tube component carrying steam at 7 bar. An effective specific heat approach captures the latent phase change: cp,latent is activated over a 20°C melting window centered on 223°C. A state-of-charge (SOC) metric tracks energy through solid, two-phase, and liquid regions. During charging at 253°C and 0.01 kg/s, the 242 kg PCM (≈9,250 Wh capacity) fully charges in approximately 23 hours. During discharging, cool water (105°C, 7 bar) is supplied and the PCM delivers approximately 15 minutes of continuous steam at q=1 before quality drops. The power-to-capacity ratio peaks at 14 W/Wh at the onset of discharge and falls as gradients decay through the two-phase region. Model was validated against DLR (2008) experimental data for a NaNO₃ PCM array of similar geometry.",
     roleLabel: "Contribution",
     role: "Built the custom PCM component from scratch in Modelica: geometry parameterization, 2D (radial × axial) discretization arrays, effective specific heat piecewise implementation, and north/south/east/west heat port network. Integrated the PCM with TIL steam tube and Modelica thermal resistance boundary conditions. Implemented the SOC calculation spanning solid, two-phase, and liquid energy regions. Conducted parametric study of mass flow rate impact on charge time (0.01–0.04 kg/s). Performed model validation against DLR tube-in-PCM geometry data.",
     figures: [
+      { src: "PCM_discretization_image-1.png",     caption: "2D radial-axial discretization schematic — heat port network connecting Nradial × Naxial PCM cells" },
       { src: "pcm_charging_temps_firstlast.png",   caption: "First [1,1] and last [5,5] discretized PCM temperatures during charging — supply temperature and SOC overlaid" },
-      { src: "pcm_charging_temps_all.png",          caption: "All 25 discretized PCM temperatures during charging — three-phase behaviour (solid → two-phase → liquid)" },
-      { src: "pcm_discharging_temps_firstlast.png", caption: "First and last discretized PCM temperatures during discharging — latent plateau and SOC progression" },
-      { src: "pcm_steam_quality.png",               caption: "Tube inlet and outlet steam quality during discharge — q=1 maintained for ~15 minutes" },
-      { src: "pcm_power_capacity_soc.png",          caption: "Power-to-capacity ratio vs. SOC — 14 W/Wh peak at start of discharge, declining through two-phase region" }
+      { src: "pcm_steam_quality.png",               caption: "Tube inlet and outlet steam quality during discharge — q=1 maintained for ~15 minutes" }
     ]
   },
   {
