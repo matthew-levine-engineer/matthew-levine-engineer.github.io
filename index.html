@@ -531,7 +531,7 @@ const projects = [
     figures: [
       { src: "PCM_discretization_image-1.PNG",     caption: "2D radial-axial discretization schematic — heat port network connecting Nradial × Naxial PCM cells" },
       { src: "pcm_charging_temps_firstlast.png",   caption: "First [1,1] and last [5,5] discretized PCM temperatures during charging — supply temperature and SOC overlaid" },
-      { src: "pcm_steam_quality.png",               caption: "Tube inlet and outlet steam quality during discharge — q=1 maintained for ~15 minutes" }
+      { src: "pcm_steam_quality.png",              caption: "Tube inlet and outlet steam quality during discharge — q=1 maintained for ~15 minutes" }
     ]
   },
   {
@@ -606,7 +606,7 @@ function getBg(cat) {
 }
 
 function showDetail(id) {
-  const p = projects[id];
+  const p = projects.find(x => x.id === id);
   document.getElementById('main-view').style.display = 'none';
   document.getElementById('detail-view').style.display = 'block';
   document.getElementById('d-category').textContent = p.category;
@@ -619,7 +619,7 @@ function showDetail(id) {
       <span class="detail-meta-key">${k}</span>
       <span class="detail-meta-val">${v}</span>
     </div>`).join('');
-  document.getElementById('d-specs').innerHTML = `<p class="detail-section-label" style="margin-bottom:1rem">Specifications</p>` +
+  document.getElementById('d-specs').innerHTML = '<p class="detail-section-label" style="margin-bottom:1rem">Specifications</p>' +
     Object.entries(p.meta).map(([k,v]) => `
       <div class="spec-row">
         <span class="spec-key">${k}</span>
@@ -627,23 +627,14 @@ function showDetail(id) {
       </div>`).join('');
   const heroImg = document.getElementById('d-hero-img');
   heroImg.innerHTML = p.image
-    ? `<img src="${p.image}" alt="${p.title}">`
-    : `<svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.25">
-        <rect x="10" y="10" width="60" height="60" stroke="#4a7fb5" stroke-width="0.75"/>
-        <line x1="10" y1="40" x2="70" y2="40" stroke="#4a7fb5" stroke-width="0.5"/>
-        <line x1="40" y1="10" x2="40" y2="70" stroke="#4a7fb5" stroke-width="0.5"/>
-        <circle cx="40" cy="40" r="15" stroke="#4a7fb5" stroke-width="0.5"/>
-      </svg>`;
+    ? '<img src="' + p.image + '" alt="' + p.title + '">'
+    : '<svg width="80" height="80" viewBox="0 0 80 80" fill="none" opacity="0.25"><rect x="10" y="10" width="60" height="60" stroke="#4a7fb5" stroke-width="0.75"/><line x1="10" y1="40" x2="70" y2="40" stroke="#4a7fb5" stroke-width="0.5"/><line x1="40" y1="10" x2="40" y2="70" stroke="#4a7fb5" stroke-width="0.5"/><circle cx="40" cy="40" r="15" stroke="#4a7fb5" stroke-width="0.5"/></svg>';
   const figSection = document.getElementById('d-figures');
   const figGrid = document.getElementById('d-figures-grid');
   if (p.figures && p.figures.length) {
-    figGrid.innerHTML = p.figures.map((f, i) => `
-      <div class="figure-item">
-        <img src="${f.src}" alt="${f.caption}" loading="lazy">
-        <div class="figure-caption">
-          <span class="figure-num">Fig. ${i + 1}</span>${f.caption}
-        </div>
-      </div>`).join('');
+    figGrid.innerHTML = p.figures.map((f, i) =>
+      '<div class="figure-item"><img src="' + f.src + '" alt="' + f.caption + '" loading="lazy"><div class="figure-caption"><span class="figure-num">Fig. ' + (i+1) + '</span>' + f.caption + '</div></div>'
+    ).join('');
     figSection.style.display = '';
   } else {
     figSection.style.display = 'none';
