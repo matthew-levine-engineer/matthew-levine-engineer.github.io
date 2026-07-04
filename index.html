@@ -487,6 +487,7 @@ const projects = [
   {
     id: 0,
     logos: ["logo_dtu.png"],
+    imgPosition: "left center",
     category: "Thermal Energy Storage",
     title: "Thesis — Thermodynamic and Economic Analysis of Composite Phase Change Material Energy Storage",
     desc: "Dynamic 1D simulation of composite phase-change material packed beds for solar salt HTF systems. Comparative analysis across four bed configurations.",
@@ -536,6 +537,7 @@ const projects = [
   {
     id: 3,
     logos: ["logo_dtu.png"],
+    imgPosition: "center bottom",
     category: "Thermal Energy Storage",
     title: "Molten Salt Latent Energy Storage Thermal Model",
     desc: "Transient Dymola simulation of a solar salt PCM coupled to a steam loop. 2D radial-axial discretization captures phase change dynamics and steam production from latent heat discharge.",
@@ -615,7 +617,7 @@ function renderCards() {
   grid.innerHTML = projects.map(p => `
     <div class="project-card fade-up" onclick="showDetail(${p.id})">
       <div class="project-image" style="background:${getBg(p.category)}">
-        ${p.image ? `<img src="${p.image}" alt="${p.title}">` : `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        ${p.image ? `<img src="${p.image}" alt="${p.title}" style="object-position:${p.imgPosition||'center center'}">` : `<svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="40" cy="40" r="30" stroke="#4a7fb5" stroke-width="0.75"/>
           <circle cx="40" cy="40" r="18" stroke="#4a7fb5" stroke-width="0.75"/>
           <circle cx="40" cy="40" r="5" fill="#4a7fb5" opacity="0.5"/>
@@ -623,7 +625,7 @@ function renderCards() {
           <line x1="10" y1="40" x2="70" y2="40" stroke="#4a7fb5" stroke-width="0.5"/>
         </svg>`}
         <span class="img-label">${p.category}</span>
-        ${p.logos && p.logos.length ? '<div class="card-logos' + (p.logos.length > 1 ? ' card-logos-col' : '') + '">' + p.logos.map(l => '<img class="card-logo" style="' + (l.includes('dtu') ? 'height:6px;max-width:none;' : '') + '" src="' + l + '" alt="">').join('') + '</div>' : ''}
+        ${p.logos && p.logos.length ? '<div class="card-logos' + (p.logos.length > 1 ? ' card-logos-col' : '') + '">' + p.logos.map(l => '<img class="card-logo" style="' + (l.includes('dtu') ? 'height:30px;max-width:none;' : '') + '" src="' + l + '" alt="">').join('') + '</div>' : ''}
       </div>
       <div class="project-info">
         <span class="project-category">${p.category}</span>
