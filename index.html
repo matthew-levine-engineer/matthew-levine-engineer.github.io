@@ -119,7 +119,7 @@
   }
   .edu-item { display: flex; flex-direction: row; align-items: center; gap: 0.75rem; margin-bottom: 0.7rem; }
   .edu-item-text { display: flex; flex-direction: column; gap: 0.1rem; }
-  .edu-logo { height: 28px; width: auto; max-width: 60px; object-fit: contain; flex-shrink: 0; }
+  .edu-logo { height: 28px; width: 60px; object-fit: contain; flex-shrink: 0; }
   .edu-degree { font-family: var(--serif); font-size: 0.88rem; font-weight: 400; color: var(--black); }
   .edu-school { font-family: var(--mono); font-size: 0.65rem; color: var(--gray-400); letter-spacing: 0.04em; }
   .hero-right {
@@ -379,27 +379,6 @@
       </div>
     </div>
     <div class="hero-right">
-      <svg class="hero-graphic" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="200" cy="200" r="160" stroke="#a8c4e0" stroke-width="0.5"/>
-        <circle cx="200" cy="200" r="120" stroke="#a8c4e0" stroke-width="0.5"/>
-        <circle cx="200" cy="200" r="80" stroke="#a8c4e0" stroke-width="0.5"/>
-        <circle cx="200" cy="200" r="8" fill="#4a7fb5" opacity="0.6"/>
-        <line x1="200" y1="40" x2="200" y2="360" stroke="#a8c4e0" stroke-width="0.5"/>
-        <line x1="40" y1="200" x2="360" y2="200" stroke="#a8c4e0" stroke-width="0.5"/>
-        <line x1="87" y1="87" x2="313" y2="313" stroke="#a8c4e0" stroke-width="0.5"/>
-        <line x1="313" y1="87" x2="87" y2="313" stroke="#a8c4e0" stroke-width="0.5"/>
-        <ellipse cx="200" cy="200" rx="140" ry="60" stroke="#4a7fb5" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.5"/>
-        <ellipse cx="200" cy="200" rx="100" ry="42" stroke="#4a7fb5" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.5"/>
-        <ellipse cx="200" cy="200" rx="60" ry="24" stroke="#4a7fb5" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.5"/>
-        <line x1="200" y1="36" x2="200" y2="44" stroke="#4a7fb5" stroke-width="1"/>
-        <line x1="200" y1="356" x2="200" y2="364" stroke="#4a7fb5" stroke-width="1"/>
-        <line x1="36" y1="200" x2="44" y2="200" stroke="#4a7fb5" stroke-width="1"/>
-        <line x1="356" y1="200" x2="364" y2="200" stroke="#4a7fb5" stroke-width="1"/>
-        <polyline points="50,50 50,65 65,65" stroke="#4a7fb5" stroke-width="0.75" fill="none" opacity="0.6"/>
-        <polyline points="350,50 350,65 335,65" stroke="#4a7fb5" stroke-width="0.75" fill="none" opacity="0.6"/>
-        <polyline points="50,350 50,335 65,335" stroke="#4a7fb5" stroke-width="0.75" fill="none" opacity="0.6"/>
-        <polyline points="350,350 350,335 335,335" stroke="#4a7fb5" stroke-width="0.75" fill="none" opacity="0.6"/>
-      </svg>
       <div class="scroll-hint">Scroll</div>
     </div>
   </section>
@@ -637,7 +616,7 @@ function renderCards() {
           <line x1="10" y1="40" x2="70" y2="40" stroke="#4a7fb5" stroke-width="0.5"/>
         </svg>`}
         <span class="img-label">${p.category}</span>
-        ${p.logos && p.logos.length ? '<div class="card-logos' + (p.logos.length > 1 ? ' card-logos-col' : '') + '">' + p.logos.map(l => '<img class="card-logo" style="' + (l.includes('dtu') ? 'height:30px;max-width:none;' : l.includes('modernhydrogen') ? 'height:20px;' : '') + '" src="' + l + '" alt="">').join('') + '</div>' : ''}
+        ${p.logos && p.logos.length ? '<div class="card-logos' + (p.logos.length > 1 ? ' card-logos-col' : '') + '">' + p.logos.map(l => '<img class="card-logo" style="' + (l.includes('dtu') ? 'height:30px;max-width:none;' : l.includes('modernhydrogen') ? 'height:40px;' : '') + '" src="' + l + '" alt="">').join('') + '</div>' : ''}
       </div>
       <div class="project-info">
         <span class="project-category">${p.category}</span>
