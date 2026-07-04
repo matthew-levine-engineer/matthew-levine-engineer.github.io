@@ -117,7 +117,9 @@
     color: var(--gray-400);
     margin-bottom: 0.75rem;
   }
-  .edu-item { display: flex; flex-direction: column; gap: 0.1rem; margin-bottom: 0.7rem; }
+  .edu-item { display: flex; flex-direction: row; align-items: center; gap: 0.75rem; margin-bottom: 0.7rem; }
+  .edu-item-text { display: flex; flex-direction: column; gap: 0.1rem; }
+  .edu-logo { height: 28px; width: auto; max-width: 60px; object-fit: contain; flex-shrink: 0; }
   .edu-degree { font-family: var(--serif); font-size: 0.88rem; font-weight: 400; color: var(--black); }
   .edu-school { font-family: var(--mono); font-size: 0.65rem; color: var(--gray-400); letter-spacing: 0.04em; }
   .hero-right {
@@ -361,12 +363,18 @@
       <div class="education-block">
         <p class="edu-label">Education</p>
         <div class="edu-item">
-          <span class="edu-degree">MSc — Energy Technologies, Thermal Analysis</span>
-          <span class="edu-school">Technical University of Denmark</span>
+          <img class="edu-logo" src="logo_dtu.png" alt="DTU">
+          <div class="edu-item-text">
+            <span class="edu-degree">MSc — Energy Technologies, Thermal Analysis</span>
+            <span class="edu-school">Technical University of Denmark</span>
+          </div>
         </div>
         <div class="edu-item">
-          <span class="edu-degree">BS — Engineering, Mechanical Design</span>
-          <span class="edu-school">California Polytechnic University</span>
+          <img class="edu-logo" src="logo_calpoly.png" alt="Cal Poly">
+          <div class="edu-item-text">
+            <span class="edu-degree">BS — Engineering, Mechanical Design</span>
+            <span class="edu-school">California Polytechnic University</span>
+          </div>
         </div>
       </div>
     </div>
