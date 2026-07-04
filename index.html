@@ -233,8 +233,9 @@
   }
   .project-card:hover .project-arrow { color: var(--blue-accent); gap: 0.75rem; }
   .project-arrow::after { content: '→'; font-size: 0.9rem; }
-  .card-logos { position: absolute; bottom: 0.6rem; left: 0.6rem; display: flex; gap: 0.35rem; align-items: center; }
-  .card-logo { height: 28px; width: auto; object-fit: contain; background: rgba(255,255,255,0.92); border-radius: 3px; padding: 3px 6px; }
+  .card-logos { position: absolute; bottom: 0.5rem; left: 0.5rem; display: flex; gap: 0.25rem; align-items: flex-start; }
+  .card-logos-col { flex-direction: column; }
+  .card-logo { height: 16px; width: auto; max-width: 64px; object-fit: contain; background: rgba(255,255,255,0.88); border-radius: 2px; padding: 2px 4px; }
   #about { background: var(--gray-100); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .about-text p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.85; margin-bottom: 1rem; }
@@ -621,7 +622,7 @@ function renderCards() {
           <line x1="10" y1="40" x2="70" y2="40" stroke="#4a7fb5" stroke-width="0.5"/>
         </svg>`}
         <span class="img-label">${p.category}</span>
-        ${p.logos && p.logos.length ? '<div class="card-logos">' + p.logos.map(l => '<img class="card-logo" src="' + l + '" alt="">').join('') + '</div>' : ''}
+        ${p.logos && p.logos.length ? '<div class="card-logos' + (p.logos.length > 1 ? ' card-logos-col' : '') + '">' + p.logos.map(l => '<img class="card-logo" src="' + l + '" alt="">').join('') + '</div>' : ''}
       </div>
       <div class="project-info">
         <span class="project-category">${p.category}</span>
