@@ -235,7 +235,8 @@
   .project-arrow::after { content: '→'; font-size: 0.9rem; }
   .card-logos { position: absolute; bottom: 0.5rem; left: 0.5rem; display: flex; gap: 0.25rem; align-items: flex-start; }
   .card-logos-col { flex-direction: column; }
-  .card-logo { height: 16px; width: auto; max-width: 64px; object-fit: contain; background: rgba(255,255,255,0.88); border-radius: 2px; padding: 2px 4px; }
+  .card-logo { height: 16px; width: auto; max-width: 72px; object-fit: contain; background: rgba(255,255,255,0.88); border-radius: 2px; padding: 2px 4px; }
+  .card-logo-sm { height: 8px; }
   #about { background: var(--gray-100); }
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
   .about-text p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.85; margin-bottom: 1rem; }
@@ -555,7 +556,7 @@ const projects = [
     category: "Data Center Cooling",
     title: "Data Center Thermal Analysis",
     desc: "Cooling load analysis and two-stage ammonia refrigeration system design for an 80-cabinet AI data center, with waste heat recovery to a district heating network.",
-    image: "dc_liquid_cooling.jpg",
+    image: "dc_cover.jpg",
     meta: { "Institution": "DTU — Course 41420", "Year": "2025", "Tools": "EES (Engineering Equation Solver), COMP1", "Cooling Load": "11.205 MW", "Refrigerant": "R717 (Ammonia)", "COP (Operational)": "3.6" },
     overview: "This work calculates the total cooling demand of equipment contained in a data center with 80 cabinet modules of NVIDIA DGX GB300 chips — totaling 11.2 MW of cooling load — which are cooled by liquid cooling. Based on the thermal design power of each chip, auxiliary equipment, and the weather conditions of the facility, a thermal resistance network is created to keep the liquid water flowing from the data center between 15 and 22°C — the supply and return temperatures specified by ASHRAE guidelines for data center cooling infrastructure, with cabinet dimensions also derived from ASHRAE Data Centers and Telecommunication Facilities standards. While cooling methods are heavily investigated, a significant research gap exists in what to do with the thermal energy retrieved from data centers. This project repurposes the data center's thermal output via a two-stage ammonia heat pump to deliver a separate 40–50°C water loop to an industrial district heating network. While the business case is unexplored, the industrial consumer could be the data center itself or a customer paying $/kW for heating in critical processes.",
     roleLabel: "Contribution",
@@ -572,7 +573,7 @@ const projects = [
     category: "Green Hydrogen",
     title: "Modern Hydrogen Reactor Design",
     desc: "Design and build of the only two methane pyrolysis test stands at Modern Hydrogen — a Seattle-area energy startup developing a proprietary process to produce clean hydrogen and solid carbon from methane.",
-    image: "mh_reactor_diagram.png",
+    image: "mh_cover.jpg",
     meta: { "Company": "Modern Hydrogen", "Domain": "Green Hydrogen / Methane Pyrolysis", "Tools": "CAD, GD&T, Pressure Vessel Calc", "Deliverable": "2 test stands designed and built" },
     overview: "Modern Hydrogen is a clean hydrogen technology company in the Seattle area focused on a proprietary methane pyrolysis reaction — producing hydrogen and solid carbon from natural gas rather than through electrolysis or steam methane reforming. I joined as the first engineer with a mechanical design and CAD background on the hydrogen team. I created the initial concept and first 3D CAD models of a lab-scale methane pyrolysis reactor, which through successive experimentation loops became 14× more efficient than at its start — driven by innovative design modifications and rapid iteration. I applied thermal and mechanical analysis to design six separate pressure vessels capable of containing an ultra-high temperature methane pyrolysis reaction. I also led key efforts on a hydrogen combustion system program, owning the design, build, and test of multiple combustion configurations and down-selecting the best-performing system. In the same program, I oversaw testing of ignition and flame detection systems critical to safe hydrogen process operation. Throughout, I owned everything from 3D CAD and detailed drawings to wiring, assembly, instrumentation setup, and data collection and analysis. The data I collected directly informed design and component selections for the company's commercial products and pilot systems."
   },
@@ -582,7 +583,7 @@ const projects = [
     category: "AI Sustainability",
     title: "Energy in AI",
     desc: "Full lifecycle carbon assessment of Meta's Llama 3.1 405B across embodied emissions, transportation, training, post-training, and inference — deployed on Danish AI infrastructure.",
-    image: "energy-in-ai/lca_lifecycle_stages.png",
+    image: "ai_cover.png",
     meta: { "Institution": "DTU — Special Course", "Year": "2025", "Model": "Llama 3.1 405B (Meta AI)", "Tools": "Python, Ecoinvent LCA Database", "Domain": "Life Cycle Assessment", "Total Footprint": "22,564–49,904 tCO₂e" },
     overview: "Conducted a full Life Cycle Assessment (LCA) of Meta's Llama 3.1 405B — one of the most powerful openly available large language models — simulating its deployment on Danish AI infrastructure to quantify carbon emissions across the model's entire lifecycle. Most published AI emissions analyses report only training energy consumption: a single, measurable compute event defined by GPU hours and power draw. This work extends that scope to address inference — the cumulative carbon burden of billions of user queries served over the model's operational life — which in the upper-bound scenario becomes the single largest contributor at 41% of total lifecycle emissions, exceeding the training footprint by more than 2×. A critical methodological element throughout is Power Usage Effectiveness (PUE), the ratio of total data center facility energy to IT equipment energy alone. A PUE of 1.0 represents theoretical perfection; real facilities range from 1.1 to 1.5+. Meta reports a PUE of 1.09 for its Grand Teton infrastructure, and multiplying raw hardware power by this factor accounts for the overhead of cooling systems, power distribution, and facility infrastructure — producing a more realistic total energy draw for both training and inference stages. The LCA follows a cradle-to-grave framework across five included stages: Embodied Emissions (hardware manufacturing for training and inference fleets), Transportation (air freight of 16,384 NVIDIA H100 GPUs), Training (dynamic and idle power), Post-Training (six iterative rounds of reward modeling, supervised fine-tuning, and DPO), and Inference (global server fleet deployment). Results under Danish grid conditions (carbon intensity 0.220 kg CO₂eq/kWh via Ecoinvent) indicate a total lifecycle footprint of 22,564–49,904 tCO₂e. Training alone accounts for only ≈8,240 tCO₂e. Embodied emissions and inference each individually surpass training, reaching up to 19,020 tCO₂e and 18,220 tCO₂e respectively at the upper bound. At its maximum, the lifecycle impact of this single model rivals the annual greenhouse gas emissions of over 6,900 Danish residents.",
     roleLabel: "Contribution",
@@ -599,7 +600,7 @@ const projects = [
     category: "Mechanical Design",
     title: "Mechanical Design",
     desc: "A cross-industry design practice spanning medical devices, energy startups, and nuclear test equipment — from high-volume production tolerancing to GD&T-driven precision assemblies.",
-    image: "mech_design_cover.png",
+    image: "mech_cover.jpg",
     meta: { "Industries": "Medical Devices, Green Hydrogen, Nuclear", "Standard": "ASME Y14.5 (GD&T)", "Tools": "SolidWorks, AutoCAD, CAM / CNC", "Scope": "Concept through fabrication" },
     overview: "Throughout my career and academic projects, I have overseen the design process of thousands of parts for test assemblies and production. Early in my career working with medical devices, parts were often higher volume and simpler — designed to be agile and solve production line problems quickly. With my work in energy startups and nuclear, part volumes decreased but the complexity and criticality of geometries became more demanding. I went from specifying thousandths of an inch (0.00X\") tolerances in the medical device space to requiring more advanced design skills in the energy sector. While I have had exposure to SolidWorks and other CAD programs since early in my undergraduate degree, I leveled up my skills in 2021 with a Geometric Dimensioning and Tolerancing (GD&T) course covering ASME Y14.5 standards. Since then, I have continued pushing my skills through designing novel parts, participating in design reviews, and working hands-on with my designs once they come to life. My mechanical design skills became a particular asset at TerraPower, where I designed test stand equipment for high-temperature pump bearings. These assemblies require meticulous precision — misalignment, manufacturing defects, and improper design can introduce detrimental errors with each rotation of a bearing or pump shaft, leading to critical failures. Using bearing tolerance classifications and techniques from ASME fits and limits, I developed a novel design for the interfacing fits between pump shaft and bearing inner ring, and between bearing outer ring and bearing housing. Straightness, parallelism, runout, and perpendicularity callouts were all applied. This work represents one example of how my mechanical design skills have contributed to novel assemblies that remain in operation today.",
     figures: [
@@ -622,7 +623,7 @@ function renderCards() {
           <line x1="10" y1="40" x2="70" y2="40" stroke="#4a7fb5" stroke-width="0.5"/>
         </svg>`}
         <span class="img-label">${p.category}</span>
-        ${p.logos && p.logos.length ? '<div class="card-logos' + (p.logos.length > 1 ? ' card-logos-col' : '') + '">' + p.logos.map(l => '<img class="card-logo" src="' + l + '" alt="">').join('') + '</div>' : ''}
+        ${p.logos && p.logos.length ? '<div class="card-logos' + (p.logos.length > 1 ? ' card-logos-col' : '') + '">' + p.logos.map(l => '<img class="card-logo' + (l.includes('dtu') ? ' card-logo-sm' : '') + '" src="' + l + '" alt="">').join('') + '</div>' : ''}
       </div>
       <div class="project-info">
         <span class="project-category">${p.category}</span>
