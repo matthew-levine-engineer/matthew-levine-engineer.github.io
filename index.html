@@ -230,13 +230,11 @@
   .card-logo { height: 16px; width: auto; max-width: 72px; object-fit: contain; background: #ffffff; border-radius: 3px; padding: 3px 5px; }
   .card-logo-sm { height: 4px; }
   #about { background: var(--gray-100); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .about-text { max-width: 680px; }
   .about-text p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.85; margin-bottom: 1rem; }
   .skills-list { display: flex; flex-direction: column; gap: 0.5rem; }
-  .skill-row { display: flex; align-items: center; gap: 1rem; padding: 0.6rem 0; border-bottom: 0.5px solid var(--gray-200); }
-  .skill-name { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.05em; min-width: 140px; color: var(--black); }
-  .skill-bar { flex: 1; height: 1px; background: var(--gray-200); position: relative; }
-  .skill-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--blue-accent); }
+
+
   #contact { background: var(--white); }
   .contact-inner { max-width: 600px; }
   .contact-inner p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 2rem; }
@@ -322,7 +320,7 @@
     .nav-links { gap: 1rem; }
     .hero-left { padding: 3rem 1.5rem; }
     section { padding: 4rem 1.5rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+
     .project-grid { grid-template-columns: 1fr; }
     .detail-header { grid-template-columns: 1fr; gap: 2rem; }
     .detail-body { grid-template-columns: 1fr; gap: 2rem; }
@@ -381,21 +379,10 @@
       <span class="section-number">02</span>
       <h2 class="section-title">About</h2>
     </div>
-    <div class="about-grid">
-      <div class="about-text fade-up">
-        <p>I work at the intersection of simulation and hardware — developing thermal models, then validating them against physical prototypes. My career spans early-stage energy companies where I have owned projects from concept through commissioning.</p>
-        <p>My experience includes molten salt thermal energy storage systems, nuclear hardware, data center cooling infrastructure, and high-temperature industrial heat pumps. I am comfortable in both the design office and on the shop floor.</p>
-        <p>I use Python, MATLAB, ANSYS Fluent, and Excel-based heat and mass balances as primary tools. I hold GD&T proficiency for high-temperature rotating and static machinery.</p>
-      </div>
-      <div class="skills-list fade-up">
-        <div class="skill-row"><span class="skill-name">Thermal Modeling</span><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">CFD / ANSYS Fluent</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Python / MATLAB</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Mechanical Design</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">GD&T</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">Test & Validation</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-        <div class="skill-row"><span class="skill-name">System-Level Design</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
-      </div>
+    <div class="about-text fade-up">
+      <p>I work at the intersection of simulation and hardware — developing thermal models, then validating them against physical prototypes. My career spans early-stage energy companies where I have owned projects from concept through commissioning.</p>
+      <p>My experience includes molten salt thermal energy storage systems, nuclear hardware, data center cooling infrastructure, and high-temperature industrial heat pumps. I am comfortable in both the design office and on the shop floor.</p>
+      <p>I use Python, MATLAB, ANSYS Fluent, and Excel-based heat and mass balances as primary tools. I hold GD&T proficiency for high-temperature rotating and static machinery.</p>
     </div>
   </section>
 
@@ -407,13 +394,13 @@
     <div class="contact-inner fade-up">
       <p>I am open to roles in thermal engineering, energy systems, and hardware development. Feel free to reach out directly.</p>
       <div class="contact-links">
-        <a href="mailto:your@email.com" class="contact-link">
+        <a href="mailto:matthewjlevine97@gmail.com" class="contact-link">
           <span class="contact-link-label">Email</span>
-          <span class="contact-link-value">your@email.com</span>
+          <span class="contact-link-value">matthewjlevine97@gmail.com</span>
         </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+        <a href="https://www.linkedin.com/in/matthew-levine-a3344b112" target="_blank" class="contact-link">
           <span class="contact-link-label">LinkedIn</span>
-          <span class="contact-link-value">linkedin.com/in/yourprofile</span>
+          <span class="contact-link-value">linkedin.com/in/matthew-levine-a3344b112</span>
         </a>
         <a href="https://github.com/yourusername" target="_blank" class="contact-link">
           <span class="contact-link-label">GitHub</span>
