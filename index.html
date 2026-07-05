@@ -66,7 +66,7 @@
   }
   .nav-links a:hover { color: var(--black); }
   #home {
-    min-height: 60vh;
+    min-height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,7 +163,7 @@
   #projects { background: var(--white); }
   .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5px;
     background: var(--gray-200);
     border: 1.5px solid var(--gray-200);
@@ -323,7 +323,7 @@
     .hero-left { padding: 3rem 1.5rem; }
     section { padding: 4rem 1.5rem; }
 
-    .project-grid { grid-template-columns: 1fr; }
+    .project-grid { grid-template-columns: repeat(2, 1fr); }
     .detail-header { grid-template-columns: 1fr; gap: 2rem; }
     .detail-body { grid-template-columns: 1fr; gap: 2rem; }
     .detail-back, .detail-header { padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -334,7 +334,7 @@
 </head>
 <body>
 <nav>
-  <a href="#home" class="nav-name" onclick="showMain()">Matthew —</a>
+  <a href="#home" class="nav-name" onclick="showMain()">Matthew Levine Engineering Portfolio</a>
   <ul class="nav-links">
     <li><a href="#projects" onclick="showMain()">Projects</a></li>
     <li><a href="#about" onclick="showMain()">About</a></li>
@@ -418,7 +418,7 @@
   </section>
 
   <footer>
-    <p>Matthew — Mechanical Engineer</p>
+    <p>Matthew Levine Engineering Portfolio</p>
     <p>Built with HTML · Hosted on GitHub Pages</p>
   </footer>
 </div>
