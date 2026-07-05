@@ -230,8 +230,10 @@
   .card-logo { height: 16px; width: auto; max-width: 72px; object-fit: contain; background: #ffffff; border-radius: 3px; padding: 3px 5px; }
   .card-logo-sm { height: 4px; }
   #about { background: var(--gray-100); }
-  .about-text { max-width: 680px; }
-  .about-text p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.85; margin-bottom: 1rem; }
+  .skills-block { display: flex; flex-direction: column; gap: 1.5rem; max-width: 800px; }
+  .skills-category { display: flex; gap: 2rem; align-items: baseline; padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--gray-200); }
+  .skills-cat-label { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-accent); min-width: 110px; flex-shrink: 0; }
+  .skills-cat-items { font-family: var(--serif); font-size: 1rem; font-weight: 300; color: var(--black); line-height: 1.7; }
   .skills-list { display: flex; flex-direction: column; gap: 0.5rem; }
 
 
@@ -377,12 +379,21 @@
   <section id="about">
     <div class="section-header">
       <span class="section-number">02</span>
-      <h2 class="section-title">About</h2>
+      <h2 class="section-title">Skills</h2>
     </div>
-    <div class="about-text fade-up">
-      <p>I work at the intersection of simulation and hardware — developing thermal models, then validating them against physical prototypes. My career spans early-stage energy companies where I have owned projects from concept through commissioning.</p>
-      <p>My experience includes molten salt thermal energy storage systems, nuclear hardware, data center cooling infrastructure, and high-temperature industrial heat pumps. I am comfortable in both the design office and on the shop floor.</p>
-      <p>I use Python, MATLAB, ANSYS Fluent, and Excel-based heat and mass balances as primary tools. I hold GD&T proficiency for high-temperature rotating and static machinery.</p>
+    <div class="skills-block fade-up">
+      <div class="skills-category">
+        <span class="skills-cat-label">Technical</span>
+        <span class="skills-cat-items">Mechanical Design · Thermal Modeling · Product Development · Rapid Prototyping · Applied Statistics · Troubleshooting & Failure Analysis</span>
+      </div>
+      <div class="skills-category">
+        <span class="skills-cat-label">Software</span>
+        <span class="skills-cat-items">SolidWorks · ANSYS Fluent · AutoCAD · Python · MATLAB · Excel</span>
+      </div>
+      <div class="skills-category">
+        <span class="skills-cat-label">Interpersonal</span>
+        <span class="skills-cat-items">Project Management · Cross-Functional Collaboration · Active Listening · Risk Management</span>
+      </div>
     </div>
   </section>
 
@@ -401,10 +412,6 @@
         <a href="https://www.linkedin.com/in/matthew-levine-a3344b112" target="_blank" class="contact-link">
           <span class="contact-link-label">LinkedIn</span>
           <span class="contact-link-value">linkedin.com/in/matthew-levine-a3344b112</span>
-        </a>
-        <a href="https://github.com/yourusername" target="_blank" class="contact-link">
-          <span class="contact-link-label">GitHub</span>
-          <span class="contact-link-value">github.com/yourusername</span>
         </a>
       </div>
     </div>
