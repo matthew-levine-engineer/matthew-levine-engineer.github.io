@@ -76,7 +76,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6rem 5rem;
+    padding: 4rem 5rem 2rem;
     max-width: 900px;
   }
   .hero-tag {
@@ -160,7 +160,7 @@
   }
   .section-number { font-family: var(--mono); font-size: 0.65rem; color: var(--blue-accent); letter-spacing: 0.08em; }
   .section-title { font-family: var(--serif); font-size: 2rem; font-weight: 300; letter-spacing: -0.01em; }
-  #projects { background: var(--white); }
+  #projects { background: var(--white); padding-top: 2rem; }
   .project-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -347,7 +347,7 @@
     <div class="hero-left">
       <p class="hero-tag">Mechanical Engineer · Thermal Systems</p>
       <h1 class="hero-headline">Design.<br>Simulate.<br><em>Build.</em></h1>
-      <p class="hero-body">I am a mechanical engineer with a focus on thermal analysis in energy applications. My skillset spans design and simulation, then bringing these designs to life through build-test-iterate loops. I have demonstrated success in thermal energy storage, nuclear applications, data center analysis, and high temperature heat pumps.</p>
+      <p class="hero-body">I am a mechanical engineer with a focus on thermal analysis in energy applications. My skillset spans design, simulation, and prototyping through build-test-iteration loops. I have demonstrated success in thermal energy storage, nuclear, data center, and high temperature heat pump applications.</p>
       <div class="education-block">
         <p class="edu-label">Education</p>
         <div class="edu-item">
@@ -597,7 +597,6 @@ function renderCards() {
       <div class="project-info">
         <span class="project-category">${p.category}</span>
         <h3 class="project-title">${p.title}</h3>
-        <p class="project-desc">${p.desc}</p>
         <span class="project-arrow">View project</span>
       </div>
     </div>
